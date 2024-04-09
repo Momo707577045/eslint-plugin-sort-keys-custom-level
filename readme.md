@@ -10,7 +10,7 @@
 保留[官方基础配置](https://zh-hans.eslint.org/docs/latest/rules/sort-keys)
 ```
 {
-  "sort-keys-custom/sort-keys": [ "error", "asc", {
+  "sort-keys-custom-level/sort-keys": [ "error", "asc", {
     "caseSensitive": true,
     "minKeys": 2,
     "natural": false,
@@ -22,7 +22,7 @@
 保留[eslint-plugin-sort-keys-plus](https://github.com/forivall/eslint-plugin-sort-keys-plus)中 ignoreSingleLine、allCaps、shorthand 的配置
 ```
 {
-  "sort-keys-custom/sort-keys": [ "error", "asc", {
+  "sort-keys-custom-level/sort-keys": [ "error", "asc", {
     "ignoreSingleLine": false,
     "allCaps": "ignore",
     "shorthand": "ignore",
@@ -35,7 +35,7 @@
 新增`customTarget`配置项
 ```
 {
-  "sort-keys-custom/sort-keys": [ "error", "asc", {
+  "sort-keys-custom-level/sort-keys": [ "error", "asc", {
     "customTarget": [{
       "targetKeys": ["renderComponent"], // 指定 key 为 renderComponent 的对象下面的属性才排序
       "subLevels": [2], // 指定 key 为 renderComponent 的对象的第几层对象才排序
@@ -110,7 +110,7 @@
   - "subLevels": [2], // renderComponent 对象下的第二层对象才排序，channel、account、objective 不排序，里面的配置项才排序
 ```
 {
-  "sort-keys-custom/sort-keys": [ "error", "asc", {
+  "sort-keys-custom-level/sort-keys": [ "error", "asc", {
     "customTarget": [{
       "targetKeys": ["renderComponent"], // 指定 key 为 renderComponent 的对象下面的属性才排序
       "subLevels": [2], // 指定 key 为 renderComponent 的对象的第几层对象才排序，
@@ -125,13 +125,13 @@
 ```
 
 ### 使用说明
-安装依赖：`npm install eslint-plugin-sort-keys-custom --save-dev`
+安装依赖：`npm install eslint-plugin-sort-keys-custom-level --save-dev`
 
 添加插件：.eslintrc.js 中添加本插件
 ```
 {
   "plugins": [
-    "sort-keys-custom"
+    "sort-keys-custom-level"
   ]
 }
 ```
@@ -143,7 +143,7 @@ overrides: [{
     'xxx/**/*.ts',
   ],
   rules: {
-    'sort-keys-custom/sort-keys': ['warn', 'asc', {
+    'sort-keys-custom-level/sort-keys': ['warn', 'asc', {
       customTarget: [{
         targetKeys: ['renderComponent'],
         subLevels: [2],
@@ -161,7 +161,7 @@ overrides: [{
 
 ### 本地调试（pnpm 版本）
 - 在本项目执行：pnpm link --global
-- 在使用本规则的项目运行：pnpm link --global eslint-plugin-sort-keys-custom
+- 在使用本规则的项目运行：pnpm link --global eslint-plugin-sort-keys-custom-level
 ​- 正常使用本规则
 
 

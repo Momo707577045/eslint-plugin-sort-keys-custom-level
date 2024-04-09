@@ -1,9 +1,9 @@
 {
-  "name": "eslint-plugin-sort-keys-custom",
+  "name": "eslint-plugin-sort-keys-custom-level",
   "version": "1.0.0",
   "description": "Fork of eslint rule that sorts keys in objects (https://eslint.org/docs/rules/sort-keys) with custom rule",
   "repository": {
-    "url": "https://github.com/Momo707577045/eslint-plugin-sort-keys-custom",
+    "url": "https://github.com/Momo707577045/eslint-plugin-sort-keys-custom-level",
     "type": "git"
   },
   "keywords": [

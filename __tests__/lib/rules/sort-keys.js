@@ -9,7 +9,7 @@
 // ------------------------------------------------------------------------------
 
 const path = require('path')
-const rule = require('../../../lib/rules/sort-keys-custom')
+const rule = require('../../../lib/rules/sort-keys-custom-level')
 const RuleTester = require('eslint').RuleTester
 
 // ------------------------------------------------------------------------------
