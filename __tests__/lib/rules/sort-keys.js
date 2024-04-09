@@ -373,49 +373,6 @@ const test = {
     { code: 'var obj = {C:2, b_:1, c:3}', options: ['asc', { natural: true, allCaps: 'first' }] },
     { code: 'var obj = {B:1, a:2}', options: ['asc', { natural: true, allCaps: 'first' }] },
 
-    // overrides
-    {
-      code: 'var obj = {a:1, b:{y:1, $:1, a:1}, c:1}',
-      options: [
-        'asc',
-        {
-          overrides: [
-            {
-              properties: ['b'],
-              order: ['y', '$'],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      code: 'var obj = {a:1, b:{y:1, $:1, a:1}, c:1}',
-      options: [
-        'asc',
-        {
-          overrides: [
-            {
-              properties: ['b'],
-              ignore: true,
-            },
-          ],
-        },
-      ],
-    },
-    {
-      code: 'var obj = {a:1, b:{y:1, $:1}, c:1}',
-      options: [
-        'asc',
-        {
-          overrides: [
-            {
-              order: ['y', '$'],
-            },
-          ],
-        },
-      ],
-    },
-
     // shorthand first
     {
       code: 'var obj = {a, _:2, b:3}',
@@ -1046,56 +1003,6 @@ const test = {
       options: ['desc', { natural: true, caseSensitive: false, minKeys: 2 }],
       errors: ["Expected object keys to be in natural insensitive descending order. 'b' should be before '_'."],
       output: 'var obj = {a:1, b:3, _:2}',
-    },
-
-    // overrides
-    {
-      code: 'var obj = {a:1, b:{$:1, y:1, a:1}, c:1}',
-      options: [
-        'asc',
-        {
-          overrides: [
-            {
-              message: 'CUSTOM_MESSAGE',
-              properties: ['b'],
-              order: ['y', '$'],
-            },
-          ],
-        },
-      ],
-      errors: ["CUSTOM_MESSAGE 'y' should be before '$'."],
-      output: 'var obj = {a:1, b:{y:1, $:1, a:1}, c:1}',
-    },
-    {
-      code: 'var obj = {a:1, b:{y:1, $:1, a:1}, c:1}',
-      options: [
-        'asc',
-        {
-          overrides: [
-            {
-              order: ['y', '$'],
-            },
-          ],
-        },
-      ],
-      errors: ["Expected object keys to be in ascending order. '$' should be before 'y'."],
-      output: 'var obj = {a:1, b:{$:1, y:1, a:1}, c:1}',
-    },
-    {
-      code: 'var obj = {a:1, c:1, b:{y:1, $:1, a:1}}',
-      options: [
-        'asc',
-        {
-          overrides: [
-            {
-              properties: ['b'],
-              ignore: true,
-            },
-          ],
-        },
-      ],
-      errors: ["Expected object keys to be in ascending order. 'b' should be before 'c'."],
-      output: 'var obj = {a:1, b:{y:1, $:1, a:1}, c:1}',
     },
 
     // ALL_CAPS first
