@@ -1,0 +1,38 @@
+{
+  "name": "eslint-plugin-sort-keys-custom",
+  "version": "1.0.0",
+  "description": "Fork of eslint rule that sorts keys in objects (https://eslint.org/docs/rules/sort-keys) with custom rule",
+  "repository": {
+    "url": "https://github.com/Momo707577045/eslint-plugin-sort-keys-custom",
+    "type": "git"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "sort-keys"
+  ],
+  "author": "毛静文 <707577045@qq.com>",
+  "contributors": [
+    "毛静文 <707577045@qq.com>",
+    "ESLint Contributors <https://github.com/eslint/eslint/blob/main/lib/rules/sort-keys.js>"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "test": "jest",
+    "test-debug": "node --inspect node_modules/.bin/jest --watch --runInBand"
+  },
+  "dependencies": {
+    "natural-compare": "^1.4.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.18.2",
+    "eslint": "^8.17.0",
+    "jest": "^28.1.1"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "license": "ISC"
+}
